@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Package, type: :model do
-  %w(name version title).each do |attr|
+  %w(name version title description suggests).each do |attr|
     it "has an #{attr}" do
       expect(Package.new).to respond_to(attr)
     end

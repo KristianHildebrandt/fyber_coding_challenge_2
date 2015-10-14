@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014143153) do
+ActiveRecord::Schema.define(version: 20151014151159) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 20151014143153) do
     t.string   "name"
     t.string   "version"
     t.text     "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "suggests"
+    t.text     "description"
   end
 
   add_index "packages", ["name", "version"], name: "index_packages_on_name_and_version", unique: true

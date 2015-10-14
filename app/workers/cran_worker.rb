@@ -15,7 +15,9 @@ class CranWorker
       Package.create(
         name: details['Package'],
         version: details['Version'],
-        title: details['Title']
+        title: details['Title'],
+        suggests: package['Suggests'],
+        description: details['Description']
       )
     end
     handle_asynchronously :get_package
