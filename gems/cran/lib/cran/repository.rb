@@ -5,6 +5,9 @@ require 'open-uri'
 require 'zlib'
 require "dcf"
 
+OpenURI::Buffer.send :remove_const, 'StringMax' if OpenURI::Buffer.const_defined?('StringMax')
+OpenURI::Buffer.const_set 'StringMax', 0
+
 module Cran
   class Repository
     class << self
@@ -22,7 +25,8 @@ module Cran
 
       def unpacked_package(package)
         file = package_file(package)
-        b = Gem::Package::TarReader.new( Zlib::GzipReader.open file ) do |tar|
+
+        Gem::Package::TarReader.new( Zlib::GzipReader.open file ) do |tar|
           tar.each do |entry|
              if entry.full_name.include?('/DESCRIPTION')
                c = entry.read
@@ -30,6 +34,10 @@ module Cran
              end
           end
         end
+
+        rescue
+
+          byebug
       end
 
       def package_file(package)

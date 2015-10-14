@@ -6,12 +6,12 @@ require 'cran/version'
 Gem::Specification.new do |spec|
   spec.name          = "cran"
   spec.version       = Cran::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Kristian Hildebrandt"]
+  spec.email         = ["hildebrandt.kristian@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "none"
+  spec.description   = "none"
+  spec.homepage      = "http://fyber.com"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -31,8 +31,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "guard-rspec", "~> 4.6.4"
-  spec.add_development_dependency "httparty", "~> 0.13.7"
+  spec.add_dependency "httparty", "~> 0.13.7"
   spec.add_development_dependency "webmock"
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "treetop-dcf"
+  spec.add_dependency "treetop-dcf"
 end
